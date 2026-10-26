@@ -1,0 +1,9 @@
+{
+  "network": {
+    "outbound": {
+      "insecure_allow_all": false,
+      "allow_host": ["federated.panosc.ess.eu"],
+      "allow_port": [443]
+    }
+  }
+}

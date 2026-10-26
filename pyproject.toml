@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "panosc-tool"
+version = "0.1.0"
+description = "Minimal MCP server with one read-only PaNOSC search tool."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+dependencies = ["httpx>=0.28.1,<0.29", "mcp>=2.1.1,<2.2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.4,<9", "pytest-asyncio>=1.1,<2"]
+
+[project.scripts]
+panosc-tool = "panosc_tool:main"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["panosc_tool.py"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
